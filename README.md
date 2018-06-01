@@ -26,3 +26,4 @@ ___
 	+ If the word you were attempting to type appears, press the number associated with it
 + A "user_history.txt" file will be created, if one does not exist, to keep track of the words you have entered previously
 ___
+<p align = "center"> <b> Hope you like the project!!  </b> </p>
