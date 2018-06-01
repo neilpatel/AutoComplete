@@ -1,0 +1,39 @@
+Neil Patel
+
+Assignment 1: Auto-Complete with DLB 
+
+
+The main symbol table that I used was a DLB (De La Briandais) Trie backed by an ArrayList. 
+I used this structure mainly to keep track of all the indicies in both DLB structures 
+(user history as well as the dictionary). 
+
+This ArrayList keeps track of the nodes that are references to both the siblings, 
+the adajecent nodes in the DLB as well as any children of the individual nodes.
+
+The last node in the structure will be marked when the next or the child is null which 
+symbols the end of a word. This is implemented using a currentWord and a outputWord.
+
+The currentWord param keeps track of what the user inputs and is constantly updated which
+will be eventually stored into the user_history.txt file. 
+
+The outputWord param keeps track of the possible predictions to 'output' to the user and is
+filled by the traversal of the dictionary.txt which is backed with a DLB.
+
+
+In my personal opinion, this data structure is best because it greatly reduces the
+the duplicates in words. For instance, if I wanted to store the two words, soccer and socks,
+the DLB structure would not store the 'soc' prefix of both into the DLB the second time. 
+This is beneficial because memory consumption will be reduced and also the time required to 
+traverse/iterate through the file will be also reduced. Lastly, the space overhead is another factor
+to consider. This makes the run time for each the size of the word and maybe decreases depending on 
+if the words added to user_history have the same prefix as another word. 
+
+
+Another approach I was thinking about using was a Hash Table/Map with a unique hashing function
+which would increase the run time and overall performance. However, the drawback with this approach
+that I quickly realized was that every word that starts with the same letter would have a character duplicated
+in memory for every instance. This would theoretically add up because there is a very LARGE number of passwords/keys
+that start with the individual letter. 
+
+All in all I took the approach that would be the simplistic and easiest to implement the Auto-complete task that 
+met all the requirements sufficiently. 
